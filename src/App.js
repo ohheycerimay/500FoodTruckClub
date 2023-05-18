@@ -9,6 +9,8 @@ import './index.css'
 import './styles.css'
 import 'typeface-smokum'
 import bg from './bg.webp'
+import FindaCart from './FindaCart.png'
+import a500Logo from './a500Logo.png'
 
 function App() {
   const [location, setLocation] = useState('')
@@ -52,13 +54,13 @@ function App() {
     <div className="container mx-auto py-8 px-4">
       <div className="bg-slate-400 inline-block rounded-lg">
         <h1 className="text-3xl md:text-4xl lg:text-5xl text-amber-50 font-bold font-smokum text-center py-4 px-8">
-          500 Food Trucks Club
+        <img className="h-80" src={a500Logo}/>
         </h1>
       </div>
       <div className="flex flex-col items-center bg-amber-50 mt-8 p-4 rounded-lg">
   <form className="w-full md:w-auto" onSubmit={handleSubmit}>
     <label htmlFor="location" className="text-lg md:text-2xl text-slate-400 font-bold mt-2 mb-4">
-      Find Truck Locations Near You:
+      <img className="h-64" src={FindaCart}/>
     </label>
     <div className="flex items-center">
       <input
