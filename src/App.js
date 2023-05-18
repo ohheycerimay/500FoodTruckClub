@@ -92,7 +92,7 @@ function App() {
                 htmlFor="location"
                 className="text-lg md:text-2xl text-slate-400 font-bold mb-4">
                 <img
-                  className="h-12 md:h-24"
+                  className="h-8 md:h-16"
                   src={FindaCart}
                   alt="Find a Cart"
                 />
