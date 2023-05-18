@@ -77,33 +77,34 @@ function App() {
               </Marker>
             ))}
           </MapContainer>
-          <div className="absolute top-4 right-4 bg-amber-50 p-4 max-w-xs md:max-w-sm w-2/3 md:w-1/3 h-2/5 md:h-1/3 rounded-3xl" style={{ zIndex: 1 }}>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="location" className="text-lg md:text-2xl text-slate-400 font-bold mb-4">
-              <img className="h-12 md:h-24" src={FindaCart} alt="Find a Cart" />
-            </label>
-            <div className="flex items-center">
-              <input
-                type="text"
-                id="location"
-                value={location}
-                onChange={handleLocationChange}
-                className="p-3 border border-gray-300 rounded mr-2 w-full"
-                placeholder="Where ya at?"
-              />
-              <button
-                type="submit"
-                className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-3 px-6 rounded ml-2"
-              >
-                Search
-              </button>
-            </div>
+          <div className="absolute top-4 right-4 bg-amber-50 p-4 max-w-xs md:max-w-xsm w-11/12 md:w-1/3 lg:w-1/2 h-1/4 md:h-2/5 rounded-3xl" style={{ zIndex: 1 }}>
+            <form onSubmit={handleSubmit} className="flex flex-col items-center">
+              <label htmlFor="location" className="text-lg md:text-2xl text-slate-400 font-bold mb-4">
+                <img className="h-12 md:h-24" src={FindaCart} alt="Find a Cart" />
+              </label>
+              <div className="flex items-center w-full">
+                <input
+                  type="text"
+                  id="location"
+                  value={location}
+                  onChange={handleLocationChange}
+                  className="p-3 border border-gray-300 rounded mr-2 w-full text-base md:text-lg"
+                  placeholder="Where ya at?"
+                />
+                <button
+                  type="submit"
+                  className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-3 px-6 rounded ml-2 text-base md:text-lg"
+                >
+                  Search
+                </button>
+              </div>
             </form>
           </div>
         </div>
       </div>
-    </div>
+  </div>
   );
+  
   
   
   
