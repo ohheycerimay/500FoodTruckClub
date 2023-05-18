@@ -84,21 +84,17 @@ function App() {
             ))}
           </MapContainer>
           <div
-            className="absolute top-4 right-4 bg-amber-50 p-4 max-w-xs md:max-w-sm w-11/12 md:w-2/3 lg:w-1/2 h-auto md:h-1/5 rounded-3xl"
+            className="absolute top-4 right-4 bg-amber-50 p-4 max-w-xs md:max-w-sm w-11/12 md:w-2/3 lg:w-1/2 rounded-3xl"
             style={{ zIndex: 1 }}>
             <form
               onSubmit={handleSubmit}
               className="flex flex-col items-center h-full">
               <div className="flex flex-col items-center justify-center flex-grow">
-                <label
-                  htmlFor="location"
-                  className="text-lg md:text-2xl text-slate-400 font-bold mb-4">
-                  <img
-                    className="h-8 md:h-16 object-contain"
-                    src={FindaCart}
-                    alt="Find a Cart"
-                  />
-                </label>
+                <img
+                  className="h-8 md:h-16 object-contain mb-4"
+                  src={FindaCart}
+                  alt="Find a Cart"
+                />
                 <div className="flex items-center w-full">
                   <input
                     type="text"
