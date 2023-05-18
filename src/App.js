@@ -49,69 +49,72 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bg})` }}>
-  <div className="flex justify-center">
-    <div className="container mx-auto py-8 px-4">
-      <div className="bg-slate-400 inline-block rounded-lg">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl text-amber-50 font-bold font-smokum text-center py-4 px-8">
-        <img className="h-80" src={a500Logo}/>
-        </h1>
-      </div>
-      <div className="flex flex-col items-center bg-amber-50 mt-8 p-4 max-w-2xl mx-auto rounded">
-  <form className="w-full md:w-auto" onSubmit={handleSubmit}>
-    <label htmlFor="location" className="text-lg md:text-2xl text-slate-400 font-bold mt-2 mb-4">
-      <img className="h-64" src={FindaCart} />
-    </label>
-    <div className="flex items-center">
-      <input
-        type="text"
-        id="location"
-        value={location}
-        onChange={handleLocationChange}
-        className="p-3 border border-gray-300 rounded mr-2 w-full"
-        placeholder="Enter your location"
-      />
-      <button
-        type="submit"
-        className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-3 px-6 rounded ml-2"
-      >
-        Search
-      </button>
-    </div>
-  </form>
-</div>
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bg})` }}>
+      <div className="flex justify-center">
+        <div className="container mx-auto py-8 px-4">
+          <div className="flex flex-col items-center bg-amber-50 mt-8 p-4 max-w-2xl mx-auto shadow-lg rounded-3xl">
+            <form className="w-full md:w-auto" onSubmit={handleSubmit}>
+              <label
+                htmlFor="location"
+                className="text-lg md:text-2xl text-slate-400 font-bold mt-2 mb-4">
+                <img className="h-64" src={FindaCart} />
+              </label>
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  id="location"
+                  value={location}
+                  onChange={handleLocationChange}
+                  className="p-3 border border-gray-300 rounded mr-2 w-full"
+                  placeholder="Enter your location"
+                />
+                <button
+                  type="submit"
+                  className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-3 px-6 rounded ml-2">
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
 
-
-  
-      <div className="w-full h-96 py-4 rounded">
-  <MapContainer center={[37.7749, -122.4194]} zoom={13} className="h-full shadow-lg rounded">
-    <TileLayer
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      attribution="Map data © OpenStreetMap contributors"
-    />
-    {foodTrucks.map((truck) => (
-      <Marker
-        key={truck.objectid}
-        position={[truck.latitude, truck.longitude]}
-        icon={L.icon({
-          iconUrl: 'https://cdn-icons-png.flaticon.com/512/683/683071.png',
-          iconSize: [32, 32],
-          iconAnchor: [16, 32],
-          popupAnchor: [0, -32],
-        })}
-      >
-        <Popup>
-          <h3 className="text-lg font-bold">{truck.applicant}</h3>
-          <p className="text-sm">Cuisine: {truck.fooditems}</p>
-          <p className="text-sm">Address: {truck.address}</p>
-        </Popup>
-      </Marker>
-    ))}
-  </MapContainer>
-</div>
+          <div className="w-full h-96 py-4 rounded">
+            <MapContainer
+              center={[37.7749, -122.4194]}
+              zoom={13}
+              className="h-full shadow-lg rounded">
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution="Map data © OpenStreetMap contributors"
+              />
+              {foodTrucks.map((truck) => (
+                <Marker
+                  key={truck.objectid}
+                  position={[truck.latitude, truck.longitude]}
+                  icon={L.icon({
+                    iconUrl:
+                      'https://cdn-icons-png.flaticon.com/512/683/683071.png',
+                    iconSize: [32, 32],
+                    iconAnchor: [16, 32],
+                    popupAnchor: [0, -32],
+                  })}>
+                  <Popup>
+                    <h3 className="text-lg font-bold">{truck.applicant}</h3>
+                    <p className="text-sm">Cuisine: {truck.fooditems}</p>
+                    <p className="text-sm">Address: {truck.address}</p>
+                  </Popup>
+                </Marker>
+              ))}
+            </MapContainer>
+          </div>
+          <div className="bg-slate-400 flex flex-col items-center mt-2 p-4 max-w-2xl mx-auto shadow-lg rounded-3xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl text-amber-50 font-bold font-smokum text-center py-4 px-8">
+              <img className="h-64" src={a500Logo} />
+            </h1>
+          </div>
         </div>
       </div>
-      
     </div>
   )
 }
